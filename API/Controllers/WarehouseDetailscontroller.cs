@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -37,20 +38,6 @@ namespace API.Controllers
             return vehicles.ToList();
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Warehouse> GetVehicleWarehouseDetails(int id)
-        {
-            var warehouse  = (from v in _context.Vehicles
-                join w in _context.Warehouses on v.WarehouseId equals w.Id
-                where v.Id == id
-                select new Warehouse
-                    {
-                            Id = w.Id,
-                            Name = w.Name,
-                            Latitude = w.Latitude,
-                            Longitude = w.Longitude
-                    });
-            return warehouse.FirstOrDefault();
-        }
+        
     }
 }

@@ -1,1 +1,64 @@
-<h1>{{title}}</h1>
+<h3 class="p-3 text-center">Franks Warehouse</h3>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+.ag-row .ag-cell {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+  }
+</style>
+<div class="example-header">
+    <span id="selectedRows"></span>
+</div>
+<div>
+    <br>
+</div>
+<div >
+    <table style="width: 1250px;">
+        <tr>
+            <td style="text-align:left"> <button class="button" (click)="AddToCart()" >
+                Add To Cart</button></td>
+                <td style="text-align:right"><button class="button2" (click)="Checkout()" >
+                    Checkout</button></td>
+        </tr>
+    </table>
+   
+    
+</div>
+<div>
+    <br>
+</div>
+<div class="flex-container">
+
+    <div class="flex-child magenta">
+        <ag-grid-angular
+        style="width: 750px; height: 500px;"
+        class="ag-theme-alpine"
+        [rowSelection]="rowSelection"
+        [rowData]="rowData"
+        (selectionChanged)="onSelectionChanged($event)"
+        (gridReady)="onGridReady($event)"
+        [isRowSelectable]="isRowSelectable"
+        [columnDefs]="columnDefs"
+        EnableColResize= true>
+    </ag-grid-angular>
+    </div>
+    
+    <div class="flex-child green">
+        <div ng-show="cart.length !== 0">
+            <h1>SHOPPING CART</h1>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let c of cart" >
+                <h4>{{c.make}} |                <span style="color:blue"> {{c.count}} </span>
+        | {{c.price*c.count}}</h4>
+              </li>
+            </ul>
+        
+            <h1>Total : {{total}}</h1>
+          </div>
+    </div>
+    
+  </div>
+
+
+
