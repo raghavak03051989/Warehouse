@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -20,8 +15,9 @@ namespace API.Controllers
             _context = context;
         }
 
+        // API returns warehouse details of the vehicle
       [HttpGet]
-        public ActionResult<Warehouse> GetVehicles(int id)
+        public ActionResult<Warehouse> GetVehicleWarehouse(int id)
         {
             var warehouse  = (from v in _context.Vehicles
                 join w in _context.Warehouses on v.WarehouseId equals w.Id

@@ -16,9 +16,9 @@
 <div >
     <table style="width: 1250px;">
         <tr>
-            <td style="text-align:left"> <button class="button" (click)="AddToCart()" >
+            <td style="text-align:left;vertical-align: middle;"> <button class="button" (click)="AddToCart()" >
                 Add To Cart</button></td>
-                <td style="text-align:right"><button class="button2" (click)="Checkout()" >
+                <td style="text-align:right;vertical-align: middle;"><button class="button2" (click)="Checkout()" >
                     Checkout</button></td>
         </tr>
     </table>
@@ -32,7 +32,7 @@
 
     <div class="flex-child magenta">
         <ag-grid-angular
-        style="width: 750px; height: 500px;"
+        style="width: 750px; height: 750px;"
         class="ag-theme-alpine"
         [rowSelection]="rowSelection"
         [rowData]="rowData"
@@ -46,18 +46,15 @@
     
     <div class="flex-child green">
         <div ng-show="cart.length !== 0">
-            <h1>SHOPPING CART</h1>
+            <h3>SHOPPING CART</h3>
             <ul class="list-group">
               <li class="list-group-item" *ngFor="let c of cart" >
-                <h4>{{c.make}} |                <span style="color:blue"> {{c.count}} </span>
-        | {{c.price*c.count}}</h4>
+                <h6>{{c.make}} | <span style="color:blue"> {{c.count}} </span> | {{c.price*c.count}}</h6>
               </li>
             </ul>
-        
-            <h1>Total : {{total}}</h1>
+            <h3>Total : {{total}}</h3>
           </div>
     </div>
-    
   </div>
 
 

@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -20,6 +15,7 @@ namespace API.Controllers
             _context = context;
         }
 
+        // API returns all the vehicles across all the warehouses
         [HttpGet]
         public ActionResult<IEnumerable<Vehicle>> GetVehicles()
         {
@@ -37,7 +33,5 @@ namespace API.Controllers
                });
             return vehicles.ToList();
         }
-
-        
     }
 }

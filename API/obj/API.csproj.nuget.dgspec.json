@@ -52,9 +52,21 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.2, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
             }
           },
           "imports": [
