@@ -3,11 +3,12 @@ Steps to run the Project
 
 1. Download the code from the Github link
 2. Open Command Prompt
-3. Cd to the folder API (in the Downloaded Code)
-4. run the command dotnet run
-5. Cd to the folder client (in the Downloaded Code)
-6. run the command ng serve
-7. Now we should see a web page (https://localhost:4200) which shouls list all the cars from the warehouse database via Web API
+3. run the command dotnet dev-certs https --trust
+4. Cd to the folder API (in the Downloaded Code)
+5. run the command dotnet run
+6. Cd to the folder client (in the Downloaded Code)
+7. run the command ng serve
+8. Now we should see a web page (https://localhost:4200) which shouls list all the cars from the warehouse database via Web API
 
 Prerequisites
 
